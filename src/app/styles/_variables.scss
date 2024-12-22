@@ -31,4 +31,11 @@
     --color-gray: rgba(255, 255, 255, 0.1);
     --color-gray-additional: rgba(0, 0, 0, 0.2);
   }
+
+  .light {
+    --mode-color: var(--color-light);
+    --mode-color-additional: var(--color-dark);
+    --color-gray: rgba(0, 0, 0, 0.2);
+    --color-gray-additional: rgba(255, 255, 255, 0.1);
+  }
 }

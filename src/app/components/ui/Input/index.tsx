@@ -9,7 +9,7 @@ interface Props {
   onChange: (value: string) => void;
   value: string;
   placeholder?: string;
-  onKeyDown?: () => void;
+  onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
 }
 
 export const Input: React.FC<Props> = ({

@@ -1,0 +1,82 @@
+@use "@/app/styles/mixins" as *;
+
+.timers {
+  &Title {
+    margin-block: 15px 35px;
+    text-align: center;
+
+    @media screen and (max-width: 768px) {
+      margin-block: 15px 20px;
+    }
+  }
+
+  &Top {
+    @include flex-center;
+    gap: 15px;
+    max-width: 700px;
+    padding-bottom: 10px;
+    margin-inline: auto;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      padding-block: 20px 10px;
+    }
+  }
+
+  &Input {
+    flex: 1.5;
+
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
+  }
+
+  &Add {
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
+  }
+
+  &Error {
+    padding: 20px;
+    border-radius: var(--border-radius);
+    border: 1px solid rgb(206, 67, 42);
+    background-color: rgb(206 67 42 / 0.1);
+    text-align: center;
+    margin-top: 20px;
+    max-width: 700px;
+    margin-inline: auto;
+  }
+
+  &List {
+    max-width: 700px;
+    margin-inline: auto;
+  }
+
+  &Item {
+    @include flex-between;
+    padding-block: 20px;
+    border-bottom: 1px solid var(--color-gray);
+    width: 100%;
+    -webkit-animation: fade-in 0.3s;
+    animation: fade-in 0.3s;
+  }
+}
+
+@-webkit-keyframes fade-in {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
