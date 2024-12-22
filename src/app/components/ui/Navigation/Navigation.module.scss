@@ -1,0 +1,36 @@
+@use "@/app/styles/mixins" as *;
+
+.nav {
+  background-color: var(--mode-color-additional);
+  color: var(--mode-color);
+  border-radius: var(--border-radius);
+  padding: 20px;
+
+  &List {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+
+  &Link {
+    @include flex-between;
+    border: 1px solid var(--color-gray-additional);
+    min-height: 50px;
+    padding-inline: 15px;
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease-in-out;
+
+    svg {
+      transition: transform 0.3s;
+    }
+
+    &:hover {
+      background-color: var(--color-accent);
+      color: var(--color-dark);
+
+      svg {
+        transform: rotate(45deg);
+      }
+    }
+  }
+}

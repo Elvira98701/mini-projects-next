@@ -1,0 +1,52 @@
+@use "@/app/styles/mixins" as *;
+
+.header {
+  padding-block: 20px;
+
+  &Inner {
+    min-height: var(--header-height);
+    @include flex-between;
+    padding-inline: 25px;
+    background-color: var(--color-accent);
+    border-radius: var(--border-radius);
+  }
+
+  &Logo {
+    @include flex-center;
+    font-weight: 700;
+    -moz-column-gap: 5px;
+    column-gap: 5px;
+    font-family: var(--font-family-accent);
+    color: var(--color-dark);
+  }
+
+  &Icon {
+    @include square(40px);
+    -webkit-animation: rotateAnimation 15s infinite alternate;
+    animation: rotateAnimation 15s infinite alternate;
+  }
+}
+
+@-webkit-keyframes rotateAnimation {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@keyframes rotateAnimation {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}

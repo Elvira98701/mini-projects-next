@@ -1,0 +1,55 @@
+@use "@/app/styles/mixins" as *;
+
+.button {
+  background-color: var(--mode-color-additional);
+  min-height: 40px;
+  padding-inline: 25px;
+  color: var(--mode-color);
+  text-transform: uppercase;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 12px;
+  transition: 0.4s;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  @include flex-center;
+  text-wrap: nowrap;
+  overflow: hidden;
+  position: relative;
+
+  &::before {
+    content: "";
+    @include square(100%);
+    display: inline-block;
+    background: var(--color-accent);
+    transition: transform 0.5s ease;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    z-index: 1;
+    border-radius: 50%;
+  }
+
+  span {
+    position: relative;
+    z-index: 1;
+  }
+
+  &:hover {
+    color: var(--color-dark);
+
+    &::before {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  &.active {
+    background-color: var(--color-accent);
+    color: var(--color-dark);
+  }
+
+  @media screen and (max-width: 576px) {
+    padding-inline: 15px;
+  }
+}

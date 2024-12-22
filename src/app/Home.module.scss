@@ -1,0 +1,45 @@
+@use "@/app/styles/mixins" as *;
+
+.main {
+  padding-bottom: 20px;
+
+  &Inner {
+    display: flex;
+    justify-content: space-between;
+    min-height: calc(100vh - (var(--header-height) + 20px * 3));
+    -moz-column-gap: 25px;
+    column-gap: 20px;
+
+    @media screen and (max-width: 992px) {
+      flex-direction: column-reverse;
+      row-gap: 20px;
+    }
+  }
+
+  &Navigation {
+    flex: 1;
+  }
+
+  &Titles {
+    border-radius: var(--border-radius);
+    background: var(--color-light) url("./assets/images/bg2.jpg") center / cover
+      no-repeat;
+    color: var(--color-light);
+    flex: 2.5;
+    text-align: center;
+    position: relative;
+    padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
+
+    @media screen and (max-width: 992px) {
+      min-height: 40vh;
+    }
+  }
+
+  &Subtitle {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    font-weight: 600;
+  }
+}
