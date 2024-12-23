@@ -1,7 +1,7 @@
 import { pageConfig } from "@/app/helpers/pages.config";
-import { InavItem } from "@/app/types";
+import { INavItem } from "@/app/types";
 
-export const data: InavItem[] = [
+export const data: INavItem[] = [
   {
     id: 1,
     title: "Карточки",

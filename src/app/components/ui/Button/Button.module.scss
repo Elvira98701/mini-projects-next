@@ -1,14 +1,15 @@
 @use "@/app/styles/mixins" as *;
+@use "@/app/styles/functions" as *;
 
 .button {
   background-color: var(--mode-color-additional);
-  min-height: 40px;
-  padding-inline: 25px;
+  min-height: rem(40);
+  padding-inline: rem(25);
   color: var(--mode-color);
   text-transform: uppercase;
   font-family: inherit;
   font-weight: 700;
-  font-size: 12px;
+  font-size: rem(12);
   transition: 0.4s;
   border-radius: var(--border-radius);
   cursor: pointer;
@@ -50,6 +51,6 @@
   }
 
   @media screen and (max-width: 576px) {
-    padding-inline: 15px;
+    padding-inline: rem(15);
   }
 }

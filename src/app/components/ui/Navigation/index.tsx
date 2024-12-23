@@ -2,12 +2,9 @@ import React from "react";
 import clsx from "clsx";
 import Link from "next/link";
 import { data } from "./data";
+import { Props } from "./types";
 
 import styles from "./Navigation.module.scss";
-
-interface Props {
-  className?: string;
-}
 
 export const Navigation: React.FC<Props> = ({ className }) => {
   return (

@@ -1,11 +1,8 @@
 import React from "react";
 import clsx from "clsx";
+import { Props } from "./types";
 
 import styles from "./Container.module.scss";
-
-interface Props {
-  className?: string;
-}
 
 export const Container: React.FC<React.PropsWithChildren<Props>> = ({
   className,

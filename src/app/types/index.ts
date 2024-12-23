@@ -14,8 +14,16 @@ export interface IPageConfig {
   weather: string;
 }
 
-export interface InavItem {
-  id: number;
+export interface IItem {
+  id: number | string;
   title: string;
+  description?: string;
+}
+
+export interface INavItem extends IItem {
   link: string;
+}
+
+export interface ICard extends IItem {
+  image: string;
 }

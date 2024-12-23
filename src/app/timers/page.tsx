@@ -4,13 +4,9 @@ import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { Container, Timer } from "@/app/components/shared";
 import { Title, Input, Button } from "@/app/components/ui";
+import { ITimerItem } from "./types";
 
 import styles from "./Timers.module.scss";
-
-interface ITimerItem {
-  id: string;
-  counter: number;
-}
 
 const Page: React.FC = () => {
   const [inputValue, setInputValue] = useState<string>("");
@@ -18,14 +14,16 @@ const Page: React.FC = () => {
   const [isError, setIsError] = useState(false);
 
   const handleAddTimer = () => {
-    if (!inputValue || Number(inputValue) <= 0) {
+    const inputNumber = parseInt(inputValue);
+
+    if (isNaN(inputNumber) || inputNumber <= 0 || inputNumber > 1000) {
       setIsError(true);
     } else {
       setTimersList([
         ...timersList,
         {
           id: uuidv4(),
-          counter: parseInt(inputValue),
+          counter: inputNumber,
         },
       ]);
       setIsError(false);
@@ -51,10 +49,10 @@ const Page: React.FC = () => {
           <div className={styles.timersTop}>
             <Input
               className={styles.timersInput}
-              placeholder="Введите время в секундах"
+              placeholder="Введите время в секундах от 1 до 1000"
               type="number"
               value={inputValue}
-              onChange={setInputValue}
+              onInputChange={setInputValue}
               onKeyDown={handleKeyDown}
             />
             <Button className={styles.timersAdd} onClick={handleAddTimer}>
@@ -62,8 +60,8 @@ const Page: React.FC = () => {
             </Button>
           </div>
           {isError && (
-            <p className={styles.timersError}>
-              Введите корректное положительное число!
+            <p className={styles.timersError} role="alert">
+              Введите корректное положительное число от 1 до 1000!
             </p>
           )}
           <ul className={styles.timersList}>

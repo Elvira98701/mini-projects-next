@@ -1,20 +1,16 @@
 import React from "react";
 import clsx from "clsx";
+import { Props } from "./types";
 
 import styles from "./Button.module.scss";
 
-interface Props {
-  className?: string;
-  onClick: () => void;
-}
-
 export const Button: React.FC<React.PropsWithChildren<Props>> = ({
   className,
-  onClick,
   children,
+  ...props
 }) => {
   return (
-    <button className={clsx(styles.button, className)} onClick={onClick}>
+    <button className={clsx(styles.button, className)} {...props}>
       <span>{children}</span>
     </button>
   );

@@ -2,10 +2,9 @@
 
 import React, { useEffect, useState } from "react";
 import { ThemeContext } from "./ThemeContext";
+import { Theme } from "./types";
 
-export type Theme = "light" | "dark";
-
-export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
+export const ThemeProvider: React.FC<React.PropsWithChildren> = ({
   children,
 }) => {
   const [theme, setTheme] = useState<Theme>("light");

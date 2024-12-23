@@ -1,18 +1,19 @@
 @use "@/app/styles/mixins" as *;
+@use "@/app/styles/functions" as *;
 
 .main {
-  padding-bottom: 20px;
+  padding-bottom: rem(20);
 
   &Inner {
     display: flex;
     justify-content: space-between;
-    min-height: calc(100vh - (var(--header-height) + 20px * 3));
-    -moz-column-gap: 25px;
-    column-gap: 20px;
+    min-height: calc(100vh - (var(--header-height) + rem(20) * 3));
+    -moz-column-gap: rem(20);
+    column-gap: rem(20);
 
     @media screen and (max-width: 992px) {
       flex-direction: column-reverse;
-      row-gap: 20px;
+      row-gap: rem(20);
     }
   }
 
@@ -28,7 +29,7 @@
     flex: 2.5;
     text-align: center;
     position: relative;
-    padding: 20px;
+    padding: rem(20);
     transition: background-color 0.3s, color 0.3s;
 
     @media screen and (max-width: 992px) {
@@ -38,8 +39,8 @@
 
   &Subtitle {
     position: absolute;
-    bottom: 25px;
-    right: 25px;
+    bottom: rem(25);
+    right: rem(25);
     font-weight: 600;
   }
 }

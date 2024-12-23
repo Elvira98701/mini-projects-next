@@ -1,14 +1,14 @@
 :root {
   --color-light: #ffffff;
   --color-dark: #09090b;
-  --color-gray: rgba(0, 0, 0, 0.2);
+  --color-gray: rgb(0 0 0 / 0.2);
   --color-gray-additional: rgb(255 255 255 / 0.1);
   --color-accent: #dfe40f;
 
-  --container-padding-x: 20px;
-  --container-width: 1200px;
-  --border-radius: 30px;
-  --header-height: 70px;
+  --container-padding-x: 1.25rem;
+  --container-width: 75rem;
+  --border-radius: 1.875rem;
+  --header-height: 4.375rem;
 
   --mode-color: var(--color-light);
   --mode-color-additional: var(--color-dark);
@@ -20,22 +20,22 @@
 .dark {
   --mode-color: var(--color-dark);
   --mode-color-additional: var(--color-light);
-  --color-gray: rgba(255, 255, 255, 0.1);
-  --color-gray-additional: rgba(0, 0, 0, 0.2);
+  --color-gray: rgb(255 255 255 / 0.1);
+  --color-gray-additional: rgb(0 0 0 / 0.2);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --mode-color: var(--color-dark);
     --mode-color-additional: var(--color-light);
-    --color-gray: rgba(255, 255, 255, 0.1);
-    --color-gray-additional: rgba(0, 0, 0, 0.2);
+    --color-gray: rgb(255 255 255 / 0.1);
+    --color-gray-additional: rgb(0 0 0 / 0.2);
   }
 
   .light {
     --mode-color: var(--color-light);
     --mode-color-additional: var(--color-dark);
-    --color-gray: rgba(0, 0, 0, 0.2);
-    --color-gray-additional: rgba(255, 255, 255, 0.1);
+    --color-gray: rgb(0 0 0 / 0.2);
+    --color-gray-additional: rgb(255 255 255 / 0.1);
   }
 }

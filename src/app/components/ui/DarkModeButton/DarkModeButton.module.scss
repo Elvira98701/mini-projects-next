@@ -1,22 +1,25 @@
 @use "@/app/styles/mixins" as *;
+@use "@/app/styles/functions" as *;
 
 .dark {
+  --padding: 2px;
+
   background-color: var(--color-dark);
   color: var(--color-dark);
   @include flex-center;
-  min-height: 34px;
+  min-height: rem(34);
   border-radius: var(--border-radius);
   position: relative;
   cursor: pointer;
-  padding: 2px;
+  padding: var(--padding);
 
   &::after {
     content: "";
     background-color: var(--color-light);
     position: absolute;
-    left: 2px;
-    top: 2px;
-    @include square(30px);
+    left: var(--padding);
+    top: var(--padding);
+    @include square(rem(30));
     border-radius: 50%;
     transition: transform 0.3s ease-in-out;
   }
@@ -28,7 +31,7 @@
   }
 
   &Icon {
-    @include square(30px);
+    @include square(rem(30));
     position: relative;
     z-index: 1;
   }

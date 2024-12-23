@@ -2,12 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { Button } from "@/app/components/ui";
-
-interface Props {
-  className?: string;
-  handleDeleteTimer: () => void;
-  counter: string | number;
-}
+import { Props } from "./types";
 
 export const Timer: React.FC<Props> = ({
   className,
