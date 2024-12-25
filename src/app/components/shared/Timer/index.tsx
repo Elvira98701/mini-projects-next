@@ -2,9 +2,9 @@
 
 import React, { useEffect, useState } from "react";
 import { Button } from "@/app/components/ui";
-import { Props } from "./types";
+import { TimerProps } from "./types";
 
-export const Timer: React.FC<Props> = ({
+export const Timer: React.FC<TimerProps> = ({
   className,
   handleDeleteTimer,
   counter,

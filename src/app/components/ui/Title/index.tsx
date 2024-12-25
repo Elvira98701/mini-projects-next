@@ -1,10 +1,10 @@
 import React from "react";
 import clsx from "clsx";
-import { Props } from "./types";
+import { TitleProps } from "./types";
 
 import styles from "./Title.module.scss";
 
-export const Title: React.FC<React.PropsWithChildren<Props>> = ({
+export const Title: React.FC<React.PropsWithChildren<TitleProps>> = ({
   className,
   children,
 }) => {

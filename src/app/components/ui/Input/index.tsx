@@ -1,10 +1,10 @@
 import React from "react";
 import clsx from "clsx";
-import { Props } from "./types";
+import { InputProps } from "./types";
 
 import styles from "./Input.module.scss";
 
-export const Input: React.FC<Props> = ({
+export const Input: React.FC<InputProps> = ({
   className,
   onInputChange,
   ...props

@@ -1,0 +1,72 @@
+@use "@/app/styles/mixins" as *;
+@use "@/app/styles/functions" as *;
+
+.dialog {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background-color: var(--color-gray);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  @include flex-center;
+  -webkit-animation: fade-in 0.3s;
+  animation: fade-in 0.3s;
+
+  &Body {
+    width: clamp(21.875rem, 17.5rem + 21.88vw, 43.75rem);
+    min-height: rem(600);
+    padding: rem(20);
+    border-radius: var(--border-radius);
+    position: relative;
+    -webkit-animation: translate-in 0.4s;
+    animation: translate-in 0.4s;
+  }
+
+  &Close {
+    position: absolute;
+    right: rem(20);
+    top: rem(20);
+    background-color: var(--color-accent);
+    @include flex-center;
+    @include square(rem(50));
+    border-radius: 50%;
+    z-index: 10;
+    cursor: pointer;
+  }
+}
+
+@-webkit-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes translate-in {
+  from {
+    transform: translateY(100px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes translate-in {
+  from {
+    transform: translateY(100px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}

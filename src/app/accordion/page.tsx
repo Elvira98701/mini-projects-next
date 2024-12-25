@@ -1,9 +1,9 @@
 import React from "react";
 import { Container } from "@/app/components/shared";
 import { Accordion, Title } from "@/app/components/ui";
+import { data } from "./data";
 
 import styles from "./Accordion.module.scss";
-import { data } from "./data";
 
 const Page: React.FC = () => {
   return (

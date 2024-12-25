@@ -1,6 +1,6 @@
 import { IItem } from "@/app/types";
 
-export interface Props {
+export interface AccordionProps {
   className?: string;
   items: IItem[];
 }

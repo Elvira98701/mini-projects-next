@@ -1,10 +1,10 @@
 import React from "react";
 import clsx from "clsx";
-import { Props } from "./types";
+import { ButtonProps } from "./types";
 
 import styles from "./Button.module.scss";
 
-export const Button: React.FC<React.PropsWithChildren<Props>> = ({
+export const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
   className,
   children,
   ...props
