@@ -37,12 +37,17 @@
     z-index: 1;
   }
 
-  &:hover {
+  &:hover:not(:disabled) {
     color: var(--color-dark);
 
     &::before {
       transform: translate(-50%, -50%) scale(1);
     }
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: auto;
   }
 
   &.active {

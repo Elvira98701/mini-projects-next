@@ -55,7 +55,11 @@ const Page: React.FC = () => {
               onInputChange={setInputValue}
               onKeyDown={handleKeyDown}
             />
-            <Button className={styles.timersAdd} onClick={handleAddTimer}>
+            <Button
+              className={styles.timersAdd}
+              onClick={handleAddTimer}
+              disabled={inputValue.trim().length === 0}
+            >
               Добавить таймер
             </Button>
           </div>
