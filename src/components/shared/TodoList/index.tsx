@@ -8,8 +8,8 @@ import {
   todosCleared,
 } from "@/lib/features/todos/todosSlice";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
-import { TodoListItem } from "./TodoListItem";
 import { Button } from "@/components/ui";
+import { TodoListItem } from "./TodoListItem";
 
 import styles from "./todoList.module.scss";
 
