@@ -1,0 +1,12 @@
+@use "@/styles/functions" as *;
+
+.input {
+  padding-inline: rem(20);
+  font-family: inherit;
+  border: 1px solid var(--color-gray);
+  border-radius: var(--border-radius);
+  min-height: rem(40);
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}

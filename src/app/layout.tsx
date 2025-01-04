@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Montserrat, Zen_Kaku_Gothic_New } from "next/font/google";
-import { Header, ThemeProvider } from "@/app/components/shared";
 import clsx from "clsx";
+import StoreProvider from "./StoreProvider";
+import { Header, ThemeProvider } from "@/components/shared";
 
-import "@/app/styles/index.scss";
+import "@/styles/index.scss";
 
 const montserratSans = Montserrat({
   variable: "--font-montserrat-sans",
@@ -31,10 +32,12 @@ export default function RootLayout({
       <body
         className={clsx(montserratSans.variable, zenKakuGothicNew.variable)}
       >
-        <ThemeProvider>
-          <Header />
-          {children}
-        </ThemeProvider>
+        <StoreProvider>
+          <ThemeProvider>
+            <Header />
+            {children}
+          </ThemeProvider>
+        </StoreProvider>
       </body>
     </html>
   );

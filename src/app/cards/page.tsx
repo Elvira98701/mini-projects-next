@@ -2,11 +2,11 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { Container } from "@/app/components/shared";
-import { Card, Dialog, Title } from "@/app/components/ui";
+import { Container } from "@/components/shared";
+import { Card, Dialog, Title } from "@/components/ui";
 import { nftCards } from "./data";
 
-import styles from "./Cards.module.scss";
+import styles from "./cards.module.scss";
 
 const Page: React.FC = () => {
   const [cardId, setCardId] = useState<number>(0);

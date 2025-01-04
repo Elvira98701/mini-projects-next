@@ -1,5 +1,5 @@
-@use "@/app/styles/mixins" as *;
-@use "@/app/styles/functions" as *;
+@use "@/styles/mixins" as *;
+@use "@/styles/functions" as *;
 
 .main {
   padding-bottom: rem(20);
@@ -23,8 +23,8 @@
 
   &Titles {
     border-radius: var(--border-radius);
-    background: var(--color-light) url("./assets/images/bg2.jpg") center / cover
-      no-repeat;
+    background: var(--color-light) url("../assets/images/bg2.jpg") center /
+      cover no-repeat;
     color: var(--color-light);
     flex: 2.5;
     text-align: center;

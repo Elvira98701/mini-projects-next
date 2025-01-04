@@ -1,8 +1,8 @@
 import React from "react";
-import { Container } from "@/app/components/shared";
-import { Navigation, Title } from "@/app/components/ui";
+import { Container } from "@/components/shared";
+import { Navigation, Title } from "@/components/ui";
 
-import styles from "./Home.module.scss";
+import styles from "./home.module.scss";
 
 const Page: React.FC = () => {
   return (

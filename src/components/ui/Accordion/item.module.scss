@@ -1,0 +1,59 @@
+@use "@/styles/mixins" as *;
+@use "@/styles/functions" as *;
+
+.item {
+  border: 1px solid var(--color-gray);
+  padding: rem(30);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: color 0.3s;
+
+  &Title {
+    @include flex-between;
+    transition: color 0.3s;
+
+    &:hover {
+      color: var(--color-accent);
+    }
+
+    svg {
+      transition: transform 0.3s;
+    }
+  }
+
+  &Description {
+    padding-top: rem(10);
+    -webkit-animation: fade-in 0.3s;
+    animation: fade-in 0.3s;
+  }
+}
+
+.active {
+  .itemTitle {
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+@-webkit-keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}

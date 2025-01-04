@@ -1,0 +1,8 @@
+@use "@/styles/functions" as *;
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  row-gap: rem(20);
+  margin-bottom: rem(25);
+}

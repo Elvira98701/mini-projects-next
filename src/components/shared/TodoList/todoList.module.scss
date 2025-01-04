@@ -1,0 +1,27 @@
+@use "@/styles/mixins" as *;
+@use "@/styles/functions" as *;
+
+.list {
+  padding-bottom: rem(20);
+
+  &Item {
+    padding-block: rem(20);
+    border-bottom: 1px solid var(--color-gray);
+    @include flex-between;
+  }
+}
+
+.buttons {
+  @include flex-center;
+  gap: rem(15);
+
+  @media screen and (max-width: 576px) {
+    flex-direction: column;
+
+    .completed,
+    .clearCompleted,
+    .clearAll {
+      width: 100%;
+    }
+  }
+}

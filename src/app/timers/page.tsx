@@ -1,12 +1,12 @@
 "use client";
 
 import React, { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
-import { Container, Timer } from "@/app/components/shared";
-import { Title, Input, Button } from "@/app/components/ui";
+import { nanoid } from "@reduxjs/toolkit";
+import { Container, Timer } from "@/components/shared";
+import { Title, Input, Button } from "@/components/ui";
 import { ITimerItem } from "./types";
 
-import styles from "./Timers.module.scss";
+import styles from "./timers.module.scss";
 
 const Page: React.FC = () => {
   const [inputValue, setInputValue] = useState<string>("");
@@ -22,7 +22,7 @@ const Page: React.FC = () => {
       setTimersList([
         ...timersList,
         {
-          id: uuidv4(),
+          id: nanoid(),
           counter: inputNumber,
         },
       ]);

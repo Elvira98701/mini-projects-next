@@ -1,0 +1,39 @@
+@use "@/styles/mixins" as *;
+@use "@/styles/functions" as *;
+
+.card {
+  min-height: rem(300);
+  border: 1px solid var(--color-gray);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  padding: rem(20);
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(to bottom, rgb(0 0 0 / 0), rgb(0 0 0 / 0.3));
+    border-radius: inherit;
+  }
+
+  &Title {
+    margin-top: auto;
+    position: relative;
+    z-index: 2;
+    color: var(--color-light);
+  }
+
+  &Image {
+    position: absolute;
+    inset: 0;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: inherit;
+    z-index: 0;
+    width: 100%;
+  }
+}

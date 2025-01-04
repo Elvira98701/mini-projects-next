@@ -1,4 +1,4 @@
-import { IItem } from "@/app/types";
+import { IItem } from "@/types";
 
 export const data: IItem[] = [
   {

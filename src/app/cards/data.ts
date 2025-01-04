@@ -1,4 +1,4 @@
-import { ICard } from "../types";
+import { ICard } from "../../types";
 
 export const nftCards: ICard[] = [
   {

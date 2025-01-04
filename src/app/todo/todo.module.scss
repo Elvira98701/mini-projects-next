@@ -1,0 +1,22 @@
+@use "@/styles/mixins" as *;
+@use "@/styles/functions" as *;
+
+.todo {
+  &Title {
+    margin-block: rem(15) rem(35);
+    text-align: center;
+
+    @media screen and (max-width: 768px) {
+      margin-block: rem(15) rem(20);
+    }
+  }
+
+  &Body {
+    max-width: rem(900);
+    padding-bottom: rem(10);
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    gap: rem(20);
+  }
+}
