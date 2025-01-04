@@ -8,10 +8,10 @@ import {
   todosCleared,
 } from "@/lib/features/todos/todosSlice";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
-
-import styles from "./todoList.module.scss";
 import { TodoListItem } from "./TodoListItem";
 import { Button } from "@/components/ui";
+
+import styles from "./todoList.module.scss";
 
 export const TodoList: React.FC = () => {
   const todoIds: string[] = useAppSelector(selectTodoIds);
