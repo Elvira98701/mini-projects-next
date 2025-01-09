@@ -5,5 +5,5 @@ interface ClockProps {
 }
 
 export const Clock: React.FC<ClockProps> = ({ className }) => {
-  return <div className={className}>Clock</div>;
+  return <div className={className}>Clock2</div>;
 };
