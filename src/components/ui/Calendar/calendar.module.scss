@@ -1,0 +1,36 @@
+@use "@/styles/mixins" as *;
+@use "@/styles/functions" as *;
+
+.calendar {
+  border: 1px solid var(--color-gray);
+  border-radius: var(--border-radius);
+  padding: rem(20);
+
+  &Header {
+    @include flex-between;
+  }
+
+  &Title {
+    font-weight: 700;
+  }
+
+  &Table {
+    width: 100%;
+    min-width: rem(280);
+    margin-top: rem(5);
+  }
+
+  td,
+  th {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 0.9;
+    padding-block: rem(8);
+
+    &.active {
+      background-color: var(--mode-color-additional);
+      color: var(--mode-color);
+      border-radius: rem(5);
+    }
+  }
+}

@@ -1,0 +1,22 @@
+@use "@/styles/mixins" as *;
+@use "@/styles/functions" as *;
+
+.tabs {
+  &Buttons {
+    @include flex-center;
+    background-color: var(--mode-color-additional);
+    border-radius: var(--border-radius);
+  }
+
+  &Content {
+    padding: rem(20);
+    border: 1px solid var(--color-gray);
+    border-radius: var(--border-radius);
+    margin-top: rem(20);
+  }
+}
+
+.active {
+  background-color: var(--color-accent);
+  color: var(--color-dark);
+}

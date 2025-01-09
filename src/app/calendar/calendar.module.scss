@@ -1,0 +1,29 @@
+@use "@/styles/mixins" as *;
+@use "@/styles/functions" as *;
+
+.calendar {
+  &Title {
+    margin-block: rem(15) rem(35);
+    text-align: center;
+
+    @media screen and (max-width: 768px) {
+      margin-block: rem(15) rem(20);
+    }
+  }
+
+  &Content {
+    @include flex-between;
+    max-width: rem(800);
+    padding-bottom: rem(10);
+    margin-inline: auto;
+    gap: rem(30);
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+
+  &Body {
+    min-height: rem(300);
+  }
+}

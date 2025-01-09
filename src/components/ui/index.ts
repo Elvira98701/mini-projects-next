@@ -3,6 +3,7 @@ export { Button } from "./Button";
 export { Calendar } from "./Calendar";
 export { Card } from "./Card";
 export { Checkbox } from "./Checkbox";
+export { Clock } from "./Clock";
 export { DarkModeButton } from "./DarkModeButton";
 export { Dialog } from "./Dialog";
 export { Dropdown } from "./Dropdown";

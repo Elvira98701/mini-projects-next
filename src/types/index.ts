@@ -3,7 +3,6 @@ export interface IPageConfig {
   accordion: string;
   calendar: string;
   cards: string;
-  clock: string;
   kanban: string;
   reviews: string;
   slider: string;
