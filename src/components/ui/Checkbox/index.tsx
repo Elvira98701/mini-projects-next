@@ -16,16 +16,3 @@ export const Checkbox: React.FC<CheckboxProps> = ({ className, ...props }) => {
     />
   );
 };
-
-// export const Checkbox = ({
-//   className,
-//   ...props
-// }: React.ComponentProps<"input">) => {
-//   return (
-//     <input
-//       type="checkbox"
-//       className={clsx(styles.checkbox, className)}
-//       {...props}
-//     />
-//   );
-// };
