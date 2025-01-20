@@ -5,6 +5,7 @@ export const pageConfig: IPageConfig = {
   accordion: "/accordion",
   calendar: "/calendar",
   cards: "/cards",
+  favourites: "/cards/favourites",
   kanban: "/kanban",
   reviews: "/reviews",
   slider: "/slider",

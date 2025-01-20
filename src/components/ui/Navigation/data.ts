@@ -29,7 +29,7 @@ export const data: INavItem[] = [
   },
   {
     id: 6,
-    title: "Кадендарь + Часы",
+    title: "Календарь + Часы",
     link: pageConfig.calendar,
   },
   {

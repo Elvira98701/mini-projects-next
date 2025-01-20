@@ -10,6 +10,8 @@
     padding-inline: rem(25);
     background-color: var(--color-accent);
     border-radius: var(--border-radius);
+    position: relative;
+    z-index: 20;
   }
 
   &Logo {

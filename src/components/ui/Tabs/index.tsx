@@ -1,18 +1,18 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import clsx from "clsx";
 import { IItem } from "@/types";
 import { Button } from "../Button";
 
 import styles from "./tabs.module.scss";
 
-interface Props {
+interface TabsProps {
   className?: string;
   list: IItem[];
 }
 
-export const Tabs: React.FC<Props> = ({ className, list }) => {
+export const Tabs: React.FC<TabsProps> = ({ className, list }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (

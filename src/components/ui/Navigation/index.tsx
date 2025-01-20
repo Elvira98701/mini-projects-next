@@ -1,10 +1,12 @@
-import React from "react";
 import clsx from "clsx";
 import Link from "next/link";
 import { data } from "./data";
-import { NavigationProps } from "./types";
 
 import styles from "./navigation.module.scss";
+
+interface NavigationProps {
+  className?: string;
+}
 
 export const Navigation: React.FC<NavigationProps> = ({ className }) => {
   return (

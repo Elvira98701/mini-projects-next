@@ -1,8 +1,10 @@
-import React from "react";
 import clsx from "clsx";
-import { TitleProps } from "./types";
 
 import styles from "./title.module.scss";
+
+interface TitleProps {
+  className?: string;
+}
 
 export const Title: React.FC<React.PropsWithChildren<TitleProps>> = ({
   className,

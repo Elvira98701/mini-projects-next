@@ -1,0 +1,15 @@
+@use "@/styles/mixins" as *;
+@use "@/styles/functions" as *;
+
+.button {
+  @include square(rem(50));
+  @include flex-center;
+  border-radius: var(--border-radius);
+  background-color: var(--color-dark);
+  cursor: pointer;
+
+  svg {
+    color: var(--color-light);
+    transition: color 0.3s;
+  }
+}

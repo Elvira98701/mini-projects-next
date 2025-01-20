@@ -2,11 +2,12 @@
 
 import React, { useState } from "react";
 import { nanoid } from "@reduxjs/toolkit";
-import { Container, Timer } from "@/components/shared";
+import { Container } from "@/components/shared";
 import { Title, Input, Button } from "@/components/ui";
 import { ITimerItem } from "./types";
 
 import styles from "./timers.module.scss";
+import { Timer } from "@/components/timer";
 
 const Page: React.FC = () => {
   const [inputValue, setInputValue] = useState<string>("");

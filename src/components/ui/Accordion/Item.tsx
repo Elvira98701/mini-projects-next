@@ -1,10 +1,14 @@
 "use client";
 
-import React, { useState } from "react";
-import { ItemProps } from "./types";
+import { useState } from "react";
 import clsx from "clsx";
 
 import styles from "./item.module.scss";
+
+interface ItemProps {
+  title: string;
+  description?: string;
+}
 
 export const Item: React.FC<ItemProps> = ({ title, description }) => {
   const [isActive, setIsActive] = useState(false);

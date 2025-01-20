@@ -1,8 +1,11 @@
-import React from "react";
+import { ButtonHTMLAttributes } from "react";
 import clsx from "clsx";
-import { ButtonProps } from "./types";
 
 import styles from "./button.module.scss";
+
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  className?: string;
+}
 
 export const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
   className,

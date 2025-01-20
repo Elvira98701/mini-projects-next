@@ -1,8 +1,13 @@
-import React from "react";
-import { Container, TodoForm, TodoList } from "@/components/shared";
+import { Metadata } from "next";
+import { Container } from "@/components/shared";
 import { Title } from "@/components/ui";
+import { TodoForm, TodoList } from "@/components/todo";
 
 import styles from "./todo.module.scss";
+
+export const metadata: Metadata = {
+  title: "Todo",
+};
 
 const Page: React.FC = () => {
   return (

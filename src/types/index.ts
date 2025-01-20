@@ -3,6 +3,7 @@ export interface IPageConfig {
   accordion: string;
   calendar: string;
   cards: string;
+  favourites: string;
   kanban: string;
   reviews: string;
   slider: string;
@@ -24,5 +25,16 @@ export interface INavItem extends IItem {
 }
 
 export interface ICard extends IItem {
+  image: string;
+}
+
+export interface ITitle {
+  id: string;
+  title: string;
+  name: string;
+}
+
+export interface ISlider {
+  id: number;
   image: string;
 }

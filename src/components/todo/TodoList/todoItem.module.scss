@@ -1,0 +1,49 @@
+@use "@/styles/mixins" as *;
+@use "@/styles/functions" as *;
+
+.item {
+  -webkit-animation: zoom-in 0.3s;
+  animation: zoom-in 0.3s;
+}
+
+.buttons {
+  @include flex-center;
+  gap: rem(15);
+
+  @media screen and (max-width: 768px) {
+    gap: rem(5);
+  }
+}
+
+.completed {
+  color: var(--color-gray);
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: rem(8);
+}
+
+.input {
+  width: 90%;
+}
+
+@-webkit-keyframes zoom-in {
+  from {
+    scale: 0;
+  }
+  to {
+    scale: 1;
+  }
+}
+
+@keyframes zoom-in {
+  from {
+    scale: 0;
+  }
+  to {
+    scale: 1;
+  }
+}

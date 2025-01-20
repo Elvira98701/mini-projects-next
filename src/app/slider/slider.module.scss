@@ -1,0 +1,7 @@
+@use "@/styles/functions" as *;
+
+.slider {
+  &Title {
+    margin-block: rem(15) rem(35);
+  }
+}

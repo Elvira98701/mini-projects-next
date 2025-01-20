@@ -1,4 +1,3 @@
-import React from "react";
 import { Container } from "@/components/shared";
 import { Navigation, Title } from "@/components/ui";
 
@@ -12,7 +11,7 @@ const Page: React.FC = () => {
           <Navigation className={styles.mainNavigation} />
           <div className={styles.mainTitles}>
             <Title>Мини проекты</Title>
-            <h2 className={styles.mainSubtitle}>TypeScript, React</h2>
+            <h2 className={styles.mainSubtitle}>TypeScript, React, Redux</h2>
           </div>
         </Container>
       </section>

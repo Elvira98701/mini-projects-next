@@ -1,8 +1,12 @@
+import { Metadata } from "next";
 import { Container } from "@/components/shared";
 import { Calendar, Clock, Title } from "@/components/ui";
-import React from "react";
 
 import styles from "./calendar.module.scss";
+
+export const metadata: Metadata = {
+  title: "Calendar",
+};
 
 const Page: React.FC = () => {
   return (

@@ -4,9 +4,30 @@
 .cards {
   padding-bottom: rem(20);
 
-  &Title {
+  &Header {
     margin-block: rem(15) rem(40);
-    text-align: center;
+    @include flex-center;
+    gap: rem(20);
+  }
+
+  &Favourites {
+    @include square(rem(50));
+    @include flex-center;
+    background-color: var(--mode-color-additional);
+    color: var(--mode-color);
+    position: relative;
+    border-radius: 50%;
+  }
+
+  &Count {
+    @include square(rem(30));
+    @include flex-center;
+    position: absolute;
+    left: 80%;
+    top: 0;
+    background-color: var(--color-accent);
+    color: var(--color-dark);
+    border-radius: 50%;
   }
 
   &List {
@@ -57,6 +78,7 @@
   z-index: 1;
   border-radius: var(--border-radius);
   padding: rem(20);
+  color: var(--color-dark);
 }
 
 .dialogTitle {

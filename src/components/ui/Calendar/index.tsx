@@ -1,16 +1,23 @@
 "use client";
 
-import React, { useState } from "react";
+import { memo, useState } from "react";
 import clsx from "clsx";
-import { CalendarProps, Month } from "./types";
 import { Button } from "../Button";
 
 import styles from "./calendar.module.scss";
 
-export const Calendar: React.FC<CalendarProps> = ({ className }) => {
+type Month = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11;
+
+interface CalendarProps {
+  className?: string;
+}
+
+export const Calendar = memo(function Calendar({ className }: CalendarProps) {
   const currentDate = new Date();
-  const [year, setYear] = useState(currentDate.getFullYear());
-  const [month, setMonth] = useState<Month>(currentDate.getMonth() as Month);
+  const [year, setYear] = useState(() => currentDate.getFullYear());
+  const [month, setMonth] = useState<Month>(
+    () => currentDate.getMonth() as Month
+  );
 
   const dateFormatOptions: Intl.DateTimeFormatOptions = {
     year: "numeric",
@@ -139,4 +146,4 @@ export const Calendar: React.FC<CalendarProps> = ({ className }) => {
       </table>
     </div>
   );
-};
+});

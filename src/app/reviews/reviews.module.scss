@@ -1,0 +1,23 @@
+@use "@/styles/mixins" as *;
+@use "@/styles/functions" as *;
+
+.reviews {
+  padding-bottom: rem(50);
+
+  &Header {
+    @include flex-between;
+  }
+
+  &Title {
+    margin-block: rem(15) rem(40);
+
+    @media screen and (max-width: 768px) {
+      margin-block: rem(15) rem(20);
+    }
+  }
+
+  &Filters {
+    @include flex-center;
+    gap: rem(10);
+  }
+}

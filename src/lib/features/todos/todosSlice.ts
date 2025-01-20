@@ -13,11 +13,17 @@ export interface Todo {
   completed: boolean;
 }
 
-const initialState: Todo[] = [
-  { id: "0", title: "Сходить в магазин за продуктами", completed: false },
-  { id: "1", title: "Вынести мусор", completed: false },
-  { id: "2", title: "Пойти на тренировку", completed: false },
-];
+const loadTodosFromLocalStorage = (): Todo[] => {
+  try {
+    const savedTodos = localStorage.getItem("todos");
+    return savedTodos ? JSON.parse(savedTodos) : [];
+  } catch (err) {
+    console.error("Ошибка загрузки данных из localStorage:", err);
+    return [];
+  }
+};
+
+const initialState: Todo[] = loadTodosFromLocalStorage();
 
 const todosSlice = createSlice({
   name: "todos",

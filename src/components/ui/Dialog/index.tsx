@@ -1,8 +1,11 @@
-import React from "react";
 import clsx from "clsx";
-import { DialogProps } from "./types";
 
 import styles from "./dialog.module.scss";
+
+interface DialogProps {
+  className?: string;
+  handleClose: () => void;
+}
 
 export const Dialog: React.FC<React.PropsWithChildren<DialogProps>> = ({
   className,

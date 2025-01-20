@@ -1,0 +1,69 @@
+@use "@/styles/mixins" as *;
+@use "@/styles/functions" as *;
+
+.checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+
+  &:checked ~ .checkmark:after {
+    display: block;
+  }
+}
+
+.container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: rem(20);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.checkmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 1.3em;
+  width: 1.3em;
+  background: var(--mode-color-additional);
+  border-radius: 50%;
+  transition: all 0.7s;
+
+  &:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 0.55em;
+    top: 0.35em;
+    width: 0.25em;
+    height: 0.5em;
+    border: solid var(--mode-color);
+    border-width: 0 0.15em 0.15em 0;
+    transform: rotate(45deg);
+    -webkit-animation: zoom-in 0.3s;
+    animation: zoom-in 0.3s;
+  }
+}
+
+@-webkit-keyframes zoom-in {
+  from {
+    scale: 0;
+  }
+  to {
+    scale: 1;
+  }
+}
+
+@keyframes zoom-in {
+  from {
+    scale: 0;
+  }
+  to {
+    scale: 1;
+  }
+}

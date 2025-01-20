@@ -1,8 +1,12 @@
-import React from "react";
+import { InputHTMLAttributes } from "react";
 import clsx from "clsx";
-import { InputProps } from "./types";
 
 import styles from "./input.module.scss";
+
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+  className?: string;
+  onInputChange: (value: string) => void;
+}
 
 export const Input: React.FC<InputProps> = ({
   className,

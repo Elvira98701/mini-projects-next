@@ -1,9 +1,13 @@
-import React from "react";
+import { Metadata } from "next";
 import { Container } from "@/components/shared";
 import { Tabs, Title } from "@/components/ui";
 import { frameworks } from "./data";
 
 import styles from "./tabs.module.scss";
+
+export const metadata: Metadata = {
+  title: "Tabs",
+};
 
 const Page: React.FC = () => {
   return (

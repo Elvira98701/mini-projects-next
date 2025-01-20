@@ -1,0 +1,67 @@
+@use "@/styles/mixins" as *;
+@use "@/styles/functions" as *;
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+
+  thead {
+    background-color: var(--color-accent);
+    color: var(--color-dark);
+
+    tr {
+      th {
+        &:first-child {
+          border-top-left-radius: 15px;
+        }
+
+        &:last-child {
+          border-top-right-radius: 15px;
+        }
+
+        &:not(:last-child) {
+          border-right: 1px solid var(--color-gray);
+        }
+      }
+    }
+  }
+
+  th,
+  td {
+    padding: rem(12) rem(8);
+    text-align: center;
+    transition: background-color 0.3s;
+  }
+
+  td {
+    border: 1px solid var(--color-gray);
+  }
+
+  th {
+    position: relative;
+
+    @media (max-width: 700px) {
+      font-size: rem(12);
+    }
+  }
+
+  &Button {
+    @include flex-center;
+    -moz-column-gap: rem(8);
+    column-gap: rem(8);
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    margin-inline: auto;
+
+    svg {
+      display: block;
+      transition: all 0.3s;
+    }
+  }
+}
+
+.loading {
+  text-align: center;
+  padding-top: rem(100);
+}

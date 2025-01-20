@@ -1,9 +1,13 @@
-import React from "react";
 import clsx from "clsx";
-import { AccordionProps } from "./types";
 import { Item } from "./Item";
+import { IItem } from "@/types";
 
 import styles from "./accordion.module.scss";
+
+interface AccordionProps {
+  className?: string;
+  items: IItem[];
+}
 
 export const Accordion: React.FC<AccordionProps> = ({ className, items }) => {
   return (
