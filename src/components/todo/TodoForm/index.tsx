@@ -5,33 +5,47 @@ import { Button, Input } from "@/components/ui";
 import { useAppDispatch } from "@/lib/hooks";
 import { todoAdded } from "@/lib/features/todos/todosSlice";
 
-import styles from "./todoForm.module.scss";
+import styles from "./todo-form.module.scss";
+
+interface AddTodoFormFields extends HTMLFormControlsCollection {
+  todoTitle: HTMLInputElement;
+}
+
+interface AddTodoFormElements extends HTMLFormElement {
+  readonly elements: AddTodoFormFields;
+}
 
 export const TodoForm: React.FC = () => {
   const dispatch = useAppDispatch();
   const [inputValue, setInputValue] = useState<string>("");
 
-  const handleAddTodo = () => {
-    dispatch(todoAdded(inputValue));
-    setInputValue("");
+  const handleAddTodo = (event: React.FormEvent<AddTodoFormElements>) => {
+    event.preventDefault();
+
+    if (inputValue) {
+      dispatch(todoAdded(inputValue));
+      setInputValue("");
+    }
   };
 
   return (
-    <div className={styles.todo}>
+    <form className={styles.todo} onSubmit={handleAddTodo}>
       <Input
         className={styles.todoInput}
         placeholder="Введите новую задачу"
         type="text"
+        id="todoTitle"
+        name="todoTitle"
         value={inputValue}
         onInputChange={setInputValue}
       />
       <Button
         className={styles.todoButton}
-        onClick={handleAddTodo}
         disabled={inputValue.trim().length === 0}
+        type="submit"
       >
         Добавить задачу
       </Button>
-    </div>
+    </form>
   );
 };

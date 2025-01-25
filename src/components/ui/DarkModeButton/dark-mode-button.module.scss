@@ -4,9 +4,9 @@
 .dark {
   --padding: 2px;
 
+  @include flex-center;
   background-color: var(--color-dark);
   color: var(--color-dark);
-  @include flex-center;
   min-height: rem(34);
   border-radius: var(--border-radius);
   position: relative;
@@ -14,12 +14,12 @@
   padding: var(--padding);
 
   &::after {
+    @include square(rem(30));
     content: "";
     background-color: var(--color-light);
     position: absolute;
     left: var(--padding);
     top: var(--padding);
-    @include square(rem(30));
     border-radius: 50%;
     transition: transform 0.3s ease-in-out;
   }

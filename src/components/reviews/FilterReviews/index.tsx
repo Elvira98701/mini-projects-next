@@ -1,10 +1,10 @@
 "use client";
 
 import clsx from "clsx";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui";
 
-import styles from "./filterReviews.module.scss";
+import styles from "./filter-reviews.module.scss";
 
 interface FilterReviewsProps {
   className?: string;
@@ -23,38 +23,36 @@ export const FilterReviews: React.FC<FilterReviewsProps> = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
+  useEffect(() => {
+    const handleCloseDropdawn = () => {
+      setIsOpen(false);
+    };
+
+    document.body.addEventListener("click", handleCloseDropdawn);
+    return () => {
+      document.body.removeEventListener("click", handleCloseDropdawn);
+    };
+  }, []);
+
   return (
     <div className={clsx(className, styles.filter)}>
-      <Button onClick={() => setIsOpen(!isOpen)}>
+      <Button onClick={() => setIsOpen(true)} type="button">
         Фильтрация по: {filter}
       </Button>
       {isOpen && (
         <ul className={styles.filterList}>
-          {filterList.map((item) =>
-            item === 0 || item === "all" ? (
-              <li
-                className={clsx(
-                  styles.filterItem,
-                  activeItem === item ? styles.active : ""
-                )}
-                key={item}
-                onClick={() => handleClick(item)}
-              >
-                Все
-              </li>
-            ) : (
-              <li
-                className={clsx(
-                  styles.filterItem,
-                  activeItem === item ? styles.active : ""
-                )}
-                key={item}
-                onClick={() => handleClick(item)}
-              >
-                {item}
-              </li>
-            )
-          )}
+          {filterList.map((item) => (
+            <li
+              className={clsx(
+                styles.filterItem,
+                activeItem === item ? styles.active : ""
+              )}
+              key={item}
+              onClickCapture={() => handleClick(item)}
+            >
+              {item === 0 || item === "all" ? "Все" : item}
+            </li>
+          ))}
         </ul>
       )}
     </div>

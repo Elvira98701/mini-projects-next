@@ -7,9 +7,9 @@ import {
 } from "@/lib/features/reviews/filterSlice";
 import { useGetReviewsQuery } from "@/lib/features/reviews/reviewsApi";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
-import { ITitle } from "@/types";
+import { IReview, ITitle } from "@/types";
 
-import styles from "./reviewsTable.module.scss";
+import styles from "./reviews-table.module.scss";
 
 interface ReviewsTableProps {
   titles: ITitle[];
@@ -22,7 +22,7 @@ export const ReviewsTable: React.FC<ReviewsTableProps> = ({ titles }) => {
     useAppSelector(selectFilters);
 
   if (isLoading) return <p className={styles.loading}>Loading...</p>;
-  if (isError) return <p>Error loading reviews</p>;
+  if (!reviews || isError) return <p>Error loading reviews</p>;
 
   const filteredPlatfroms =
     filterPlatform !== "all"
@@ -33,11 +33,14 @@ export const ReviewsTable: React.FC<ReviewsTableProps> = ({ titles }) => {
       ? filteredPlatfroms?.filter((review) => review.rating === filterRating)
       : filteredPlatfroms;
 
-  const sortedReviews = [...filteredRating].sort((a, b) => {
+  const sortedReviews: IReview[] = [...filteredRating].sort((a, b) => {
+    const aValue = a[sortBy as keyof IReview];
+    const bValue = b[sortBy as keyof IReview];
+
     if (sortOrder === "asc") {
-      return a[sortBy] > b[sortBy] ? 1 : -1;
+      return aValue > bValue ? 1 : -1;
     }
-    return a[sortBy] < b[sortBy] ? 1 : -1;
+    return aValue < bValue ? 1 : -1;
   });
 
   return (
@@ -55,6 +58,7 @@ export const ReviewsTable: React.FC<ReviewsTableProps> = ({ titles }) => {
                   onClick={() => {
                     dispatch(setSortedBy(name));
                   }}
+                  type="button"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

@@ -1,18 +1,30 @@
 import { Middleware } from "@reduxjs/toolkit";
-import { RootState } from "../store";
 
-type TodosAction = {
-  type: string;
-  payload?: any;
-};
+interface LocalStorageMiddlewareOptions {
+  key: string;
+  slice: string;
+}
 
-export const localStorageMiddleware: Middleware =
-  (store) => (next) => (action: TodosAction) => {
+export const createLocalStorageMiddleware =
+  ({ key, slice }: LocalStorageMiddlewareOptions): Middleware =>
+  (store) =>
+  (next) =>
+  (action) => {
     const result = next(action);
 
-    if (action.type.startsWith("todos/")) {
-      const state = store.getState();
-      localStorage.setItem("todos", JSON.stringify(state.todos));
+    if (
+      typeof action === "object" &&
+      action !== null &&
+      "type" in action &&
+      typeof action.type === "string"
+    ) {
+      if (action.type.startsWith(`${slice}/`)) {
+        const state = store.getState();
+        const sliceState = state[slice];
+        if (sliceState !== undefined) {
+          localStorage.setItem(key, JSON.stringify(sliceState));
+        }
+      }
     }
 
     return result;

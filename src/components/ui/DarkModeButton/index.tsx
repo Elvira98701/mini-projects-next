@@ -3,7 +3,7 @@
 import clsx from "clsx";
 import { useTheme } from "@/hooks/useTheme";
 
-import styles from "./darkModeButton.module.scss";
+import styles from "./dark-mode-button.module.scss";
 
 export const DarkModeButton: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
@@ -12,6 +12,7 @@ export const DarkModeButton: React.FC = () => {
     <button
       className={clsx(theme === "dark" && styles.darkMode, styles.dark)}
       onClick={toggleTheme}
+      type="button"
     >
       <svg
         className={styles.darkIcon}

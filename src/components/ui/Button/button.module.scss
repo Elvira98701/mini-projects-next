@@ -2,6 +2,7 @@
 @use "@/styles/functions" as *;
 
 .button {
+  @include flex-center;
   background-color: var(--mode-color-additional);
   min-height: rem(40);
   padding-inline: rem(25);
@@ -13,14 +14,13 @@
   transition: 0.4s;
   border-radius: var(--border-radius);
   cursor: pointer;
-  @include flex-center;
   text-wrap: nowrap;
   overflow: hidden;
   position: relative;
 
   &::before {
-    content: "";
     @include square(100%);
+    content: "";
     display: inline-block;
     background: var(--color-accent);
     transition: transform 0.5s ease;
@@ -33,9 +33,9 @@
   }
 
   span {
+    @include flex-center;
     position: relative;
     z-index: 1;
-    @include flex-center;
   }
 
   &:hover:not(:disabled) {

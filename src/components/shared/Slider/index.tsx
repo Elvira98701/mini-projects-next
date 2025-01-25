@@ -1,12 +1,12 @@
 "use client";
 
+import { useRef, useState } from "react";
 import clsx from "clsx";
 import Image from "next/image";
 import { Button } from "@/components/ui";
 import { ISlider } from "@/types";
 
 import styles from "./slider.module.scss";
-import { useRef, useState } from "react";
 
 interface SliderProps {
   className?: string;
@@ -26,11 +26,11 @@ export const Slider: React.FC<SliderProps> = ({ className, sliderList }) => {
     setActiveSlide((activeSlide - 1 + sliderList.length) % sliderList.length);
   };
 
-  const handleTouchStart = (event: TouchEvent) => {
+  const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
     touchStartX.current = event.touches[0].clientX;
   };
 
-  const handleTouchMove = (event: TouchEvent) => {
+  const handleTouchMove = (event: React.TouchEvent<HTMLDivElement>) => {
     touchEndX.current = event.touches[0].clientX;
   };
 
@@ -81,7 +81,11 @@ export const Slider: React.FC<SliderProps> = ({ className, sliderList }) => {
       </div>
 
       <div className={styles.sliderButtons}>
-        <Button className={styles.sliderPrev} onClick={handleClickPrev}>
+        <Button
+          className={styles.sliderPrev}
+          onClick={handleClickPrev}
+          type="button"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="32"
@@ -92,7 +96,11 @@ export const Slider: React.FC<SliderProps> = ({ className, sliderList }) => {
             <path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"></path>
           </svg>
         </Button>
-        <Button className={styles.sliderNext} onClick={handleClickNext}>
+        <Button
+          className={styles.sliderNext}
+          onClick={handleClickNext}
+          type="button"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="32"

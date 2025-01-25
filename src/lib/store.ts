@@ -3,9 +3,11 @@ import { configureStore } from "@reduxjs/toolkit";
 import todosReducer from "@/lib/features/todos/todosSlice";
 import filtersReducer from "@/lib/features/reviews/filterSlice";
 import favouritesReducer from "@/lib/features/cards/favouritesSlice";
+import kanbanReducer from "@/lib/features/kanban/kanbanSlice";
 
 import { reviewsApi } from "@/lib//features/reviews/reviewsApi";
-import { localStorageMiddleware } from "./middleware/localStorageMiddleware";
+import { todosMiddleware } from "./features/todos/todosMiddleware";
+import { favouritesMiddleware } from "./features/cards/favouritesMiddleware";
 
 export const makeStore = () => {
   return configureStore({
@@ -13,12 +15,13 @@ export const makeStore = () => {
       todos: todosReducer,
       filters: filtersReducer,
       favourites: favouritesReducer,
+      kanban: kanbanReducer,
       [reviewsApi.reducerPath]: reviewsApi.reducer,
     },
     middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware()
         .concat(reviewsApi.middleware)
-        .concat(localStorageMiddleware),
+        .concat(todosMiddleware, favouritesMiddleware),
   });
 };
 

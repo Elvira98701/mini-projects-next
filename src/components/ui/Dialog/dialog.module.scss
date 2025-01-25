@@ -2,13 +2,13 @@
 @use "@/styles/functions" as *;
 
 .dialog {
+  @include flex-center;
   position: fixed;
   inset: 0;
   z-index: 100;
   background-color: var(--color-gray);
   -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
-  @include flex-center;
   -webkit-animation: fade-in 0.3s;
   animation: fade-in 0.3s;
 
@@ -23,12 +23,12 @@
   }
 
   &Close {
+    @include flex-center;
+    @include square(rem(50));
     position: absolute;
     right: rem(20);
     top: rem(20);
     background-color: var(--color-accent);
-    @include flex-center;
-    @include square(rem(50));
     border-radius: 50%;
     z-index: 10;
     cursor: pointer;

@@ -1,7 +1,7 @@
 import { ButtonHTMLAttributes } from "react";
 import clsx from "clsx";
 
-import styles from "./likeButton.module.scss";
+import styles from "./like-button.module.scss";
 
 interface LikeButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;

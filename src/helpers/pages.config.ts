@@ -12,6 +12,5 @@ export const pageConfig: IPageConfig = {
   tabs: "/tabs",
   timers: "/timers",
   todo: "/todo",
-  validation: "/validation",
   weather: "/weather",
 };

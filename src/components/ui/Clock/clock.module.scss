@@ -2,12 +2,12 @@
 @use "@/styles/functions" as *;
 
 .clock {
+  @include flex-center;
   border: 1px solid var(--color-gray);
   border-radius: var(--border-radius);
   padding: rem(20);
   font-size: rem(40);
   min-width: rem(250);
-  @include flex-center;
   -webkit-animation: zoom 0.3s;
   animation: zoom 0.3s;
 }

@@ -1,0 +1,22 @@
+@use "@/styles/mixins" as *;
+@use "@/styles/functions" as *;
+
+.favourites {
+  @include square(rem(50));
+  @include flex-center;
+  background-color: var(--mode-color-additional);
+  color: var(--mode-color);
+  position: relative;
+  border-radius: 50%;
+
+  &Count {
+    @include square(rem(30));
+    @include flex-center;
+    position: absolute;
+    left: 80%;
+    top: 0;
+    background-color: var(--color-accent);
+    color: var(--color-dark);
+    border-radius: 50%;
+  }
+}

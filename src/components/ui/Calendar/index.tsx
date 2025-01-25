@@ -85,7 +85,7 @@ export const Calendar = memo(function Calendar({ className }: CalendarProps) {
   return (
     <div className={clsx(className, styles.calendar)}>
       <div className={styles.calendarHeader}>
-        <Button onClick={handlePrevMonth}>
+        <Button onClick={handlePrevMonth} type="button">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -99,7 +99,7 @@ export const Calendar = memo(function Calendar({ className }: CalendarProps) {
         <span className={styles.calendarTitle}>
           {new Date(year, month).toLocaleDateString("en-US", dateFormatOptions)}
         </span>
-        <Button onClick={handleNextMonth}>
+        <Button onClick={handleNextMonth} type="button">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"

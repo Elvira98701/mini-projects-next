@@ -14,6 +14,9 @@ export interface Todo {
 }
 
 const loadTodosFromLocalStorage = (): Todo[] => {
+  if (typeof window === "undefined") {
+    return [];
+  }
   try {
     const savedTodos = localStorage.getItem("todos");
     return savedTodos ? JSON.parse(savedTodos) : [];

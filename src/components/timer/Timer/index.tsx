@@ -32,7 +32,9 @@ export const Timer: React.FC<TimerProps> = ({
   return (
     <li className={className}>
       <span>{count}</span>
-      <Button onClick={handleDeleteTimer}>Удалить таймер</Button>
+      <Button onClick={handleDeleteTimer} type="button">
+        Удалить таймер
+      </Button>
     </li>
   );
 };

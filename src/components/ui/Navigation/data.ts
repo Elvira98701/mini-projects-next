@@ -49,11 +49,6 @@ export const data: INavItem[] = [
   },
   {
     id: 10,
-    title: "Валидация",
-    link: pageConfig.validation,
-  },
-  {
-    id: 11,
     title: "Канбан-доска",
     link: pageConfig.kanban,
   },

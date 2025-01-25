@@ -1,23 +1,27 @@
+@use "@/styles/functions" as *;
+
 .filter {
   position: relative;
 
   &List {
-    padding: 15px;
+    padding: rem(15);
     color: var(--color-dark);
     position: absolute;
     top: 110%;
     background-color: var(--color-light);
     border: 1px solid var(--color-gray);
     width: 100%;
-    z-index: 10;
+    z-index: 15;
     text-align: center;
     border-radius: var(--border-radius);
+    -webkit-animation: slide-in 0.3s;
+    animation: slide-in 0.3s;
   }
 
   &Item {
     cursor: pointer;
     transition: background-color 0.4s;
-    border-radius: 10px;
+    border-radius: rem(10);
 
     &:hover {
       background-color: var(--color-accent);
@@ -27,4 +31,26 @@
 
 .active {
   background-color: var(--color-accent);
+}
+
+@-webkit-keyframes slide-in {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }

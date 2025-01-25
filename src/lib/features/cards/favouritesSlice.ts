@@ -3,13 +3,27 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "@/lib/store";
 import { ICard } from "@/types";
 
-const initialState: ICard[] = [];
+const loadFromLocalStorage = (): ICard[] => {
+  if (typeof window === "undefined") {
+    return [];
+  }
+
+  try {
+    const savedFavourites = localStorage.getItem("favourites");
+    return savedFavourites ? JSON.parse(savedFavourites) : [];
+  } catch (err) {
+    console.error("Ошибка загрузки данных из localStorage:", err);
+    return [];
+  }
+};
+
+const initialState: ICard[] = loadFromLocalStorage();
 
 const favouritesSlice = createSlice({
   name: "favourites",
   initialState,
   reducers: {
-    cardToggled(state, action: PayloadAction<ICard>) {
+    favouritesToggled(state, action: PayloadAction<ICard>) {
       const existingIndex = state.findIndex(
         (card) => card.id === action.payload.id
       );
@@ -19,11 +33,14 @@ const favouritesSlice = createSlice({
         state.push(action.payload);
       }
     },
+    favouritesCleared() {
+      return [];
+    },
   },
 });
 
-export const { cardToggled } = favouritesSlice.actions;
+export const { favouritesToggled, favouritesCleared } = favouritesSlice.actions;
 
 export default favouritesSlice.reducer;
 
-export const selectCards = (state: RootState) => state.favourites;
+export const selectFavourites = (state: RootState) => state.favourites;

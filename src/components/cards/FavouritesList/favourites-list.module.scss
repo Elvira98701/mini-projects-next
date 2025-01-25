@@ -1,0 +1,13 @@
+@use "@/styles/mixins" as *;
+@use "@/styles/functions" as *;
+
+.favourites {
+  &Empty {
+    @include flex-center;
+    gap: rem(10);
+  }
+
+  &Button {
+    margin: rem(20) auto;
+  }
+}

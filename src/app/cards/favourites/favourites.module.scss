@@ -1,0 +1,19 @@
+@use "@/styles/mixins" as *;
+@use "@/styles/functions" as *;
+
+.favourites {
+  &Header {
+    @include flex-center;
+    margin-block: rem(15) rem(40);
+    gap: rem(20);
+  }
+
+  &Link {
+    @include flex-center;
+    gap: rem(5);
+    background-color: var(--mode-color-additional);
+    color: var(--mode-color);
+    padding: rem(5) rem(20);
+    border-radius: var(--border-radius);
+  }
+}

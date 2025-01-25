@@ -3,7 +3,10 @@
 import clsx from "clsx";
 import Image from "next/image";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
-import { cardToggled, selectCards } from "@/lib/features/cards/favouritesSlice";
+import {
+  favouritesToggled,
+  selectFavourites,
+} from "@/lib/features/cards/favouritesSlice";
 import { LikeButton } from "@/components/ui";
 import { ICard } from "@/types";
 
@@ -17,7 +20,7 @@ interface CardProps {
 
 export const Card: React.FC<CardProps> = ({ className, card, handleClick }) => {
   const dispatch = useAppDispatch();
-  const cards = useAppSelector(selectCards);
+  const cards = useAppSelector(selectFavourites);
   const { id, title, image } = card;
   const existingIndex = cards.findIndex((item) => item.id === id);
 
@@ -36,8 +39,9 @@ export const Card: React.FC<CardProps> = ({ className, card, handleClick }) => {
         isActive={existingIndex !== -1}
         onClick={(event) => {
           event.stopPropagation();
-          dispatch(cardToggled(card));
+          dispatch(favouritesToggled(card));
         }}
+        type="button"
       />
     </article>
   );

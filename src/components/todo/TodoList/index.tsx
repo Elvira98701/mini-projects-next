@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import {
   allTodosCompleted,
   completedTodosCleared,
@@ -10,8 +11,7 @@ import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { Button } from "@/components/ui";
 import { TodoListItem } from "./TodoListItem";
 
-import styles from "./todoList.module.scss";
-import { useEffect, useState } from "react";
+import styles from "./todo-list.module.scss";
 
 export const TodoList: React.FC = () => {
   const todoIds: string[] = useAppSelector(selectTodoIds);
@@ -47,16 +47,25 @@ export const TodoList: React.FC = () => {
       </ul>
       {todoIds.length > 0 && (
         <div className={styles.buttons}>
-          <Button className={styles.completed} onClick={handleAllCompleted}>
+          <Button
+            className={styles.completed}
+            onClick={handleAllCompleted}
+            type="button"
+          >
             Отметить все
           </Button>
           <Button
             className={styles.clearCompleted}
             onClick={handleCompletedClear}
+            type="button"
           >
             Удалить завершенные
           </Button>
-          <Button className={styles.clearAll} onClick={handleClearAllTodos}>
+          <Button
+            className={styles.clearAll}
+            onClick={handleClearAllTodos}
+            type="button"
+          >
             Удалить все
           </Button>
         </div>

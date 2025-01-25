@@ -1,0 +1,21 @@
+.column {
+  background-color: var(--color-gray);
+  border-radius: var(--border-radius);
+  padding: 16px;
+  width: 300px;
+
+  &Title {
+    background-color: var(--color-accent);
+    color: var(--color-dark);
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border-radius: var(--border-radius);
+  }
+}
+
+.taskList {
+  background-color: var(--mode-color);
+  border-radius: var(--border-radius);
+  padding: 8px;
+  min-height: 200px;
+}

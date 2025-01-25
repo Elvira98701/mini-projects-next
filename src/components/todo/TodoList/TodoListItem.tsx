@@ -11,7 +11,7 @@ import {
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { Button, Checkbox, Input } from "@/components/ui";
 
-import styles from "./todoItem.module.scss";
+import styles from "./todo-item.module.scss";
 
 interface TodoListItemProps {
   className?: string;
@@ -64,7 +64,7 @@ export const TodoListItem: React.FC<TodoListItemProps> = ({
         )}
       </div>
       <div className={styles.buttons}>
-        <Button onClick={handleEdit}>
+        <Button onClick={handleEdit} type="button">
           {isEdit ? (
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -87,7 +87,7 @@ export const TodoListItem: React.FC<TodoListItemProps> = ({
             </svg>
           )}
         </Button>
-        <Button onClick={handleDelete}>
+        <Button onClick={handleDelete} type="button">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"

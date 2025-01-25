@@ -5,8 +5,8 @@
   padding-block: rem(20);
 
   &Inner {
-    min-height: var(--header-height);
     @include flex-between;
+    min-height: var(--header-height);
     padding-inline: rem(25);
     background-color: var(--color-accent);
     border-radius: var(--border-radius);

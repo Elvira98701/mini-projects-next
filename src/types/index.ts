@@ -10,7 +10,6 @@ export interface IPageConfig {
   tabs: string;
   timers: string;
   todo: string;
-  validation: string;
   weather: string;
 }
 
@@ -37,4 +36,12 @@ export interface ITitle {
 export interface ISlider {
   id: number;
   image: string;
+}
+
+export interface IReview {
+  id: number;
+  platform: string;
+  rating: number;
+  date: string;
+  text: string;
 }
